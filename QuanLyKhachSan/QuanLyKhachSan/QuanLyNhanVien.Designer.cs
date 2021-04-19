@@ -48,6 +48,7 @@ namespace QuanLyKhachSan
             this.label8 = new System.Windows.Forms.Label();
             this.txtLuong = new System.Windows.Forms.TextBox();
             this.cbxGioiTinh = new System.Windows.Forms.ComboBox();
+            this.btReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgQuanLyNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,7 +130,7 @@ namespace QuanLyKhachSan
             // 
             // btThem
             // 
-            this.btThem.Location = new System.Drawing.Point(173, 221);
+            this.btThem.Location = new System.Drawing.Point(144, 221);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(75, 23);
             this.btThem.TabIndex = 28;
@@ -138,7 +139,7 @@ namespace QuanLyKhachSan
             // 
             // BtSua
             // 
-            this.BtSua.Location = new System.Drawing.Point(355, 221);
+            this.BtSua.Location = new System.Drawing.Point(287, 221);
             this.BtSua.Name = "BtSua";
             this.BtSua.Size = new System.Drawing.Size(75, 23);
             this.BtSua.TabIndex = 29;
@@ -147,7 +148,7 @@ namespace QuanLyKhachSan
             // 
             // btXoa
             // 
-            this.btXoa.Location = new System.Drawing.Point(543, 221);
+            this.btXoa.Location = new System.Drawing.Point(435, 221);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(75, 23);
             this.btXoa.TabIndex = 30;
@@ -215,11 +216,22 @@ namespace QuanLyKhachSan
             this.cbxGioiTinh.Size = new System.Drawing.Size(114, 21);
             this.cbxGioiTinh.TabIndex = 37;
             // 
+            // btReset
+            // 
+            this.btReset.Location = new System.Drawing.Point(566, 221);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(75, 23);
+            this.btReset.TabIndex = 38;
+            this.btReset.Text = "Reset";
+            this.btReset.UseVisualStyleBackColor = true;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
+            // 
             // QuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 450);
+            this.Controls.Add(this.btReset);
             this.Controls.Add(this.cbxGioiTinh);
             this.Controls.Add(this.txtLuong);
             this.Controls.Add(this.label8);
@@ -269,5 +281,6 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtLuong;
         private System.Windows.Forms.ComboBox cbxGioiTinh;
+        private System.Windows.Forms.Button btReset;
     }
 }

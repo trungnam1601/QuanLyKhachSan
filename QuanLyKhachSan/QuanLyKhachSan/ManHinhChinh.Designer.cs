@@ -30,6 +30,7 @@ namespace QuanLyKhachSan
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnDichVu = new System.Windows.Forms.Button();
@@ -39,6 +40,12 @@ namespace QuanLyKhachSan
             this.label1 = new System.Windows.Forms.Label();
             this.btnTrangChu = new System.Windows.Forms.Button();
             this.panelchinh = new System.Windows.Forms.Panel();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btTimKiem = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.datengaytra = new System.Windows.Forms.DateTimePicker();
+            this.label = new System.Windows.Forms.Label();
+            this.txtSophong = new System.Windows.Forms.TextBox();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,14 +61,8 @@ namespace QuanLyKhachSan
             this.dateNgayLap = new System.Windows.Forms.DateTimePicker();
             this.txtMaPhieuDat = new System.Windows.Forms.TextBox();
             this.dtgPhieudatphong = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtSophong = new System.Windows.Forms.TextBox();
-            this.label = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.datengaytra = new System.Windows.Forms.DateTimePicker();
-            this.btTimKiem = new System.Windows.Forms.Button();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btReset = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelchinh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPhieudatphong)).BeginInit();
@@ -83,6 +84,13 @@ namespace QuanLyKhachSan
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(187, 516);
             this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(185, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(752, 57);
+            this.panel2.TabIndex = 2;
             // 
             // button1
             // 
@@ -170,6 +178,7 @@ namespace QuanLyKhachSan
             // 
             // panelchinh
             // 
+            this.panelchinh.Controls.Add(this.btReset);
             this.panelchinh.Controls.Add(this.txtTimKiem);
             this.panelchinh.Controls.Add(this.btTimKiem);
             this.panelchinh.Controls.Add(this.label9);
@@ -195,6 +204,55 @@ namespace QuanLyKhachSan
             this.panelchinh.Name = "panelchinh";
             this.panelchinh.Size = new System.Drawing.Size(752, 450);
             this.panelchinh.TabIndex = 1;
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(389, 194);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(114, 20);
+            this.txtTimKiem.TabIndex = 65;
+            // 
+            // btTimKiem
+            // 
+            this.btTimKiem.Location = new System.Drawing.Point(305, 194);
+            this.btTimKiem.Name = "btTimKiem";
+            this.btTimKiem.Size = new System.Drawing.Size(75, 23);
+            this.btTimKiem.TabIndex = 64;
+            this.btTimKiem.Text = "Tìm Kiếm";
+            this.btTimKiem.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(80, 199);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 13);
+            this.label9.TabIndex = 63;
+            this.label9.Text = "Ngày Trả";
+            // 
+            // datengaytra
+            // 
+            this.datengaytra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datengaytra.Location = new System.Drawing.Point(159, 193);
+            this.datengaytra.Name = "datengaytra";
+            this.datengaytra.Size = new System.Drawing.Size(114, 20);
+            this.datengaytra.TabIndex = 62;
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(79, 160);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(54, 13);
+            this.label.TabIndex = 61;
+            this.label.Text = "Số Phòng";
+            // 
+            // txtSophong
+            // 
+            this.txtSophong.Location = new System.Drawing.Point(159, 153);
+            this.txtSophong.Name = "txtSophong";
+            this.txtSophong.Size = new System.Drawing.Size(114, 20);
+            this.txtSophong.TabIndex = 60;
             // 
             // txtMaNV
             // 
@@ -325,13 +383,6 @@ namespace QuanLyKhachSan
             this.dtgPhieudatphong.TabIndex = 38;
             this.dtgPhieudatphong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPhieudatphong_CellContentClick);
             // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(185, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(752, 57);
-            this.panel2.TabIndex = 2;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -344,54 +395,15 @@ namespace QuanLyKhachSan
             this.label6.TabIndex = 2;
             this.label6.Text = "Phần Mềm Quản Lý Nhà Hàng";
             // 
-            // txtSophong
+            // btReset
             // 
-            this.txtSophong.Location = new System.Drawing.Point(159, 153);
-            this.txtSophong.Name = "txtSophong";
-            this.txtSophong.Size = new System.Drawing.Size(114, 20);
-            this.txtSophong.TabIndex = 60;
-            // 
-            // label
-            // 
-            this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(79, 160);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(54, 13);
-            this.label.TabIndex = 61;
-            this.label.Text = "Số Phòng";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(80, 199);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 13);
-            this.label9.TabIndex = 63;
-            this.label9.Text = "Ngày Trả";
-            // 
-            // datengaytra
-            // 
-            this.datengaytra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datengaytra.Location = new System.Drawing.Point(159, 193);
-            this.datengaytra.Name = "datengaytra";
-            this.datengaytra.Size = new System.Drawing.Size(114, 20);
-            this.datengaytra.TabIndex = 62;
-            // 
-            // btTimKiem
-            // 
-            this.btTimKiem.Location = new System.Drawing.Point(305, 194);
-            this.btTimKiem.Name = "btTimKiem";
-            this.btTimKiem.Size = new System.Drawing.Size(75, 23);
-            this.btTimKiem.TabIndex = 64;
-            this.btTimKiem.Text = "Tìm Kiếm";
-            this.btTimKiem.UseVisualStyleBackColor = true;
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(389, 194);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(114, 20);
-            this.txtTimKiem.TabIndex = 65;
+            this.btReset.Location = new System.Drawing.Point(553, 189);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(75, 23);
+            this.btReset.TabIndex = 66;
+            this.btReset.Text = "Reset";
+            this.btReset.UseVisualStyleBackColor = true;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
             // 
             // ManHinhChinh
             // 
@@ -449,5 +461,6 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.DateTimePicker datengaytra;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.TextBox txtSophong;
+        private System.Windows.Forms.Button btReset;
     }
 }

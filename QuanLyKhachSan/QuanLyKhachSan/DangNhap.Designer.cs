@@ -142,6 +142,7 @@ namespace QuanLyKhachSan
             this.Controls.Add(this.lbDangNhap);
             this.Name = "FormDangNhap";
             this.Text = "Đăng Nhập";
+            this.Load += new System.EventHandler(this.FormDangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

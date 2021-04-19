@@ -30,47 +30,13 @@ namespace QuanLyKhachSan
             adapter.Fill(table);
             dtgPhong.DataSource = table;
 
-            UpdateTENLOAIPHONG();
-            UpdateGIA();
-            UpdateSONGUOI();
-          
+            txtTenLP.ReadOnly = true;
+            txtGia.ReadOnly = true;
+            txtSoNguoi.ReadOnly = true;
+            
         }
-
-        private void UpdateGIA()
-        {
-            cbxGia.Items.Clear();
-            command.CommandText = "SELECT * FROM LOAIPHONG ORDER BY GIA";
-            sqlReader = command.ExecuteReader();
-            while (sqlReader.Read())
-            {
-                cbxGia.Items.Add(sqlReader["GIA"].ToString());
-            }
-            sqlReader.Close();
-        }
-
-        private void UpdateTENLOAIPHONG()
-        {
-            cbxTenLoaiPhong.Items.Clear();
-            command.CommandText = "SELECT * FROM LOAIPHONG order by TENLOAIPHONG";
-            sqlReader = command.ExecuteReader();
-            while (sqlReader.Read())
-            {
-                cbxTenLoaiPhong.Items.Add(sqlReader["TENLOAIPHONG"].ToString());
-            }
-            sqlReader.Close();
-        }
-
-        private void UpdateSONGUOI()
-        {
-            cbxSonguoi.Items.Clear();
-            command.CommandText = "SELECT * FROM LOAIPHONG order by SONGUOITOIDA ASC";
-            sqlReader = command.ExecuteReader();
-            while (sqlReader.Read())
-            {
-                cbxSonguoi.Items.Add(sqlReader["SONGUOITOIDA"].ToString());
-            }
-            sqlReader.Close();
-        }
+        
+       
         public QuanLyPhong()
         {
             InitializeComponent();
@@ -85,16 +51,42 @@ namespace QuanLyKhachSan
 
         private void dtgPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             int i;
             i = dtgPhong.CurrentRow.Index;
-            txtMaLP.Text = dtgPhong.Rows[i].Cells[0].Value.ToString();
-            cbxTenLoaiPhong.Text= dtgPhong.Rows[i].Cells[1].Value.ToString();
+            cbxMaLP.Text = dtgPhong.Rows[i].Cells[0].Value.ToString();
+            txtTenLP.Text= dtgPhong.Rows[i].Cells[1].Value.ToString();
             txtSoPhong.Text= dtgPhong.Rows[i].Cells[2].Value.ToString();
-            cbxSonguoi.Text= dtgPhong.Rows[i].Cells[3].Value.ToString();
-            cbxGia.Text= dtgPhong.Rows[i].Cells[4].Value.ToString();
+            txtSoNguoi.Text= dtgPhong.Rows[i].Cells[3].Value.ToString();
+            txtGia.Text= dtgPhong.Rows[i].Cells[4].Value.ToString();
             cbxTinhTrang.Text= dtgPhong.Rows[i].Cells[5].Value.ToString();
         }
 
-        
+        private void cbxMaLP_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string maloaiphong = cbxMaLP.Text;
+            command.CommandText = "SELECT TENLOAIPHONG, GIA, SONGUOITOIDA FROM LOAIPHONG WHERE MALOAIPHONG = '" + maloaiphong + "'";
+            sqlReader = command.ExecuteReader();
+            if (sqlReader.HasRows)
+            {
+                if (sqlReader.Read())
+                {
+                    txtTenLP.Text = sqlReader["TENLOAIPHONG"].ToString();
+                    txtSoNguoi.Text = sqlReader["SONGUOITOIDA"].ToString();
+                    txtGia.Text = sqlReader["GIA"].ToString();
+                }
+                sqlReader.Close();
+            }
+        }
+
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            cbxMaLP.Text = "";
+            txtSoPhong.Text = "";
+            cbxTinhTrang.Text = "";
+            txtTenLP.Text = "";
+            txtGia.Text = "";
+            txtSoNguoi.Text = "";
+        }
     }
 }

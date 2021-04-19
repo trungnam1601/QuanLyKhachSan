@@ -50,6 +50,7 @@ namespace QuanLyKhachSan
             this.dtgQuanLyKhachHang = new System.Windows.Forms.DataGridView();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgQuanLyKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,7 +117,7 @@ namespace QuanLyKhachSan
             // 
             // btXoa
             // 
-            this.btXoa.Location = new System.Drawing.Point(589, 196);
+            this.btXoa.Location = new System.Drawing.Point(589, 160);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(75, 23);
             this.btXoa.TabIndex = 49;
@@ -125,7 +126,7 @@ namespace QuanLyKhachSan
             // 
             // BtSua
             // 
-            this.BtSua.Location = new System.Drawing.Point(589, 139);
+            this.BtSua.Location = new System.Drawing.Point(589, 122);
             this.BtSua.Name = "BtSua";
             this.BtSua.Size = new System.Drawing.Size(75, 23);
             this.BtSua.TabIndex = 48;
@@ -233,11 +234,22 @@ namespace QuanLyKhachSan
             this.label9.TabIndex = 57;
             this.label9.Text = "Địa chỉ";
             // 
+            // btReset
+            // 
+            this.btReset.Location = new System.Drawing.Point(589, 204);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(75, 23);
+            this.btReset.TabIndex = 59;
+            this.btReset.Text = "Reset";
+            this.btReset.UseVisualStyleBackColor = true;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
+            // 
             // QuanLyKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(735, 450);
+            this.Controls.Add(this.btReset);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cbxGioiTinh);
@@ -291,5 +303,6 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.DataGridView dtgQuanLyKhachHang;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btReset;
     }
 }

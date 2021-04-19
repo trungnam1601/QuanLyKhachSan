@@ -56,5 +56,17 @@ namespace QuanLyKhachSan
             txtDiaChi.Text = dtgQuanLyKhachHang.Rows[i].Cells[6].Value.ToString();
             txtQuocTich.Text = dtgQuanLyKhachHang.Rows[i].Cells[7].Value.ToString();
         }
+
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            txtMaKH.Text = "";
+            txtTenKH.Text = "";
+            cbxGioiTinh.Text = "";
+            dateNgaySinh.Text = "";
+            txtSDT.Text = "";
+            txtSCMND.Text = "";
+            txtDiaChi.Text = "";
+            txtQuocTich.Text = "";
+        }
     }
 }

@@ -55,5 +55,12 @@ namespace QuanLyKhachSan
             txtTenDV.Text = dtgQuanLyDichVu.Rows[i].Cells[1].Value.ToString();
             txtDonGia.Text = dtgQuanLyDichVu.Rows[i].Cells[2].Value.ToString();
         }
+
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            txtMaDV.Text = "";
+            txtTenDV.Text = "";
+            txtDonGia.Text = "";
+        }
     }
 }

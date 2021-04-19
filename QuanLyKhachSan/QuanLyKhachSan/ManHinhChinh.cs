@@ -116,5 +116,16 @@ namespace QuanLyKhachSan
             }
            
         }
+
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            txtMaPhieuDat.Text = "";
+            dateNgayLap.Text = "";
+            txtSophong.Text = "";
+            datengaytra.Text = "";
+            dateNgayDen.Text = "";
+            txtMaKH.Text = "";
+            txtMaNV.Text = "";
+        }
     }
 }

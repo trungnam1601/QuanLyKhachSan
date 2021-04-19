@@ -54,5 +54,10 @@ namespace QuanLyKhachSan
         {
             Application.Exit();
         }
+
+        private void FormDangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

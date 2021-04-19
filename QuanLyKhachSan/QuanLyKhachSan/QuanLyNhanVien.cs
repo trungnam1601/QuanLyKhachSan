@@ -58,5 +58,16 @@ namespace QuanLyKhachSan
             txtLuong.Text = dtgQuanLyNhanVien.Rows[i].Cells[6].Value.ToString();
           
         }
+
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            txtMaNV.Text = "";
+            txtTenNV.Text = "";
+            dateNgaySinh.Text = "";
+            txtSDT.Text = "";
+            txtDiaChi.Text = "";
+            cbxGioiTinh.Text = "";
+            txtLuong.Text = "";
+        }
     }
 }

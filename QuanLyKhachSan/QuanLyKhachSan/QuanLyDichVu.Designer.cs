@@ -40,12 +40,13 @@ namespace QuanLyKhachSan
             this.label7 = new System.Windows.Forms.Label();
             this.dtgQuanLyDichVu = new System.Windows.Forms.DataGridView();
             this.txtDonGia = new System.Windows.Forms.TextBox();
+            this.btReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgQuanLyDichVu)).BeginInit();
             this.SuspendLayout();
             // 
             // btXoa
             // 
-            this.btXoa.Location = new System.Drawing.Point(476, 163);
+            this.btXoa.Location = new System.Drawing.Point(427, 161);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(75, 23);
             this.btXoa.TabIndex = 61;
@@ -54,7 +55,7 @@ namespace QuanLyKhachSan
             // 
             // BtSua
             // 
-            this.BtSua.Location = new System.Drawing.Point(476, 126);
+            this.BtSua.Location = new System.Drawing.Point(427, 124);
             this.BtSua.Name = "BtSua";
             this.BtSua.Size = new System.Drawing.Size(75, 23);
             this.BtSua.TabIndex = 60;
@@ -63,7 +64,7 @@ namespace QuanLyKhachSan
             // 
             // btThem
             // 
-            this.btThem.Location = new System.Drawing.Point(476, 86);
+            this.btThem.Location = new System.Drawing.Point(427, 84);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(75, 23);
             this.btThem.TabIndex = 59;
@@ -138,11 +139,22 @@ namespace QuanLyKhachSan
             this.txtDonGia.Size = new System.Drawing.Size(114, 20);
             this.txtDonGia.TabIndex = 65;
             // 
+            // btReset
+            // 
+            this.btReset.Location = new System.Drawing.Point(528, 86);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(75, 23);
+            this.btReset.TabIndex = 66;
+            this.btReset.Text = "Reset";
+            this.btReset.UseVisualStyleBackColor = true;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
+            // 
             // QuanLyDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(735, 450);
+            this.Controls.Add(this.btReset);
             this.Controls.Add(this.txtDonGia);
             this.Controls.Add(this.dtgQuanLyDichVu);
             this.Controls.Add(this.label7);
@@ -175,5 +187,6 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dtgQuanLyDichVu;
         private System.Windows.Forms.TextBox txtDonGia;
+        private System.Windows.Forms.Button btReset;
     }
 }
