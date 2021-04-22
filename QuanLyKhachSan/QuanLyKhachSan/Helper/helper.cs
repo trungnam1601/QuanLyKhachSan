@@ -8,6 +8,6 @@ namespace QuanLyKhachSan.Helper
 {
     class define    
     {
-        public const string dataSource = @"Data Source=ADMIN;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
+        public const string dataSource = @"Data Source=DESKTOP-9JCB5HS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
     }
 }

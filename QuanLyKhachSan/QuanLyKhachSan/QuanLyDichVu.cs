@@ -62,5 +62,54 @@ namespace QuanLyKhachSan
             txtTenDV.Text = "";
             txtDonGia.Text = "";
         }
+
+
+        private void btThem_Click_1(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(Helper.define.dataSource);
+            string id = txtMaDV.Text;
+            connection.Open();
+
+
+            string sql = "select * from DICHVU where MADV = '" + txtMaDV.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(sql, connection);
+
+            SqlDataReader dta = cmd.ExecuteReader();
+            if (dta.Read() == true)
+            {
+
+                MessageBox.Show(" Trùng mã! Mời Nhập lại");
+            }
+            else
+            {
+                dta.Close();
+                command = connection.CreateCommand();
+                command.CommandText = "Insert into DICHVU values('" + txtMaDV.Text + "', N'" + txtTenDV.Text + "','" + txtDonGia.Text + "')";
+                command.ExecuteNonQuery();
+                loadData();
+            }
+        }
+
+        private void BtSua_Click_1(object sender, EventArgs e)
+        {
+            txtMaDV.ReadOnly = true;
+            command = connection.CreateCommand();
+            command.CommandText = "update DICHVU set MaDV = N'" + txtMaDV.Text + "', N'" + txtTenDV.Text + "','" + txtDonGia.Text + "')";
+            command.ExecuteNonQuery();
+            loadData();
+        }
+
+        private void btXoa_Click_1(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "update CHITIETPHIEUDV set MaDV = null where MaDV = '" + txtMaDV.Text + "'";
+            command.ExecuteNonQuery();
+
+            command = connection.CreateCommand();
+            command.CommandText = "delete from DICHVU where MaDV ='" + txtMaDV.Text + "'";
+            command.ExecuteNonQuery();
+            loadData();
+        }
     }
 }

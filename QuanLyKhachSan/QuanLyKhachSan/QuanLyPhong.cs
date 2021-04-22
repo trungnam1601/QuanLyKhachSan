@@ -88,5 +88,39 @@ namespace QuanLyKhachSan
             txtGia.Text = "";
             txtSoNguoi.Text = "";
         }
+
+        private void btThem_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(Helper.define.dataSource);
+            connection.Open();
+
+            if(cbxMaLP.Text != null )
+             
+                command = connection.CreateCommand();
+                command.CommandText = "Insert into PHONG values('" + cbxMaLP.Text + "','" + txtSoPhong.Text + "', '" + cbxTinhTrang.Text + "'  )";
+                command.ExecuteNonQuery();
+                loadData();   
+        }
+
+        private void BtSua_Click(object sender, EventArgs e)
+        {
+                 command = connection.CreateCommand();
+                 command.CommandText = "update PHONG set MALOAIPHONG = '" + cbxMaLP.Text + "','" + txtSoPhong.Text + "', '" + cbxTinhTrang.Text + "'  )";
+                 command.ExecuteNonQuery();
+                 loadData();
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+
+            command = connection.CreateCommand();
+            command.CommandText = "update PHONG set SOPHONG = null where SOPHONG = '" + txtSoPhong.Text + "'";
+            command.ExecuteNonQuery();
+
+            command = connection.CreateCommand();
+            command.CommandText = "delete from CHITIETPHIEUDAT where SOPHONG ='" + txtSoPhong.Text + "'";
+            command.ExecuteNonQuery();
+            loadData();
+        }
     }
 }

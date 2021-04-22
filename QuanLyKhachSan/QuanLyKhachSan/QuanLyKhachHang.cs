@@ -68,5 +68,55 @@ namespace QuanLyKhachSan
             txtDiaChi.Text = "";
             txtQuocTich.Text = "";
         }
+
+       
+
+        private void btThem_Click_1(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(Helper.define.dataSource);
+            string id = txtMaKH.Text;
+            connection.Open();
+
+
+            string sql = "select * from KHACHHANG where MAKH = '" + txtMaKH.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(sql, connection);
+
+            SqlDataReader dta = cmd.ExecuteReader();
+            if (dta.Read() == true)
+            {
+
+                MessageBox.Show(" Trùng mã! Mời Nhập lại");
+            }
+            else
+            {
+                dta.Close();
+                command = connection.CreateCommand();
+                command.CommandText = "Insert into KHACHHANG values('" + txtMaKH.Text + "', N'" + txtTenKH.Text + "','" + cbxGioiTinh.Text + "', '" + dateNgaySinh.Text + "', '" + txtSDT.Text + "','" + txtSCMND.Text + "', N'" + txtDiaChi.Text + "', '" + txtQuocTich.Text + "'  )";
+                command.ExecuteNonQuery();
+                loadData();
+            }
+        }
+
+        private void BtSua_Click(object sender, EventArgs e)
+        {
+            txtMaKH.ReadOnly = true;
+            command = connection.CreateCommand();
+            command.CommandText = "update KHACHHANG set MaKH = '" + txtMaKH.Text + "', N'" + txtTenKH.Text + "','" + cbxGioiTinh.Text + "', '" + dateNgaySinh.Text + "', '" + txtSDT.Text + "','" + txtSCMND.Text + "', N'" + txtDiaChi.Text + "', '" + txtQuocTich.Text + "'  )";
+            command.ExecuteNonQuery();
+            loadData();
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "update PHIEUDATPHONG set MaKH = null where MaKH = '" + txtMaKH.Text + "'";
+            command.ExecuteNonQuery();
+
+            command = connection.CreateCommand();
+            command.CommandText = "delete from KHACHHANG where MaKH ='" + txtMaKH.Text + "'";
+            command.ExecuteNonQuery();
+            loadData();
+        }
     }
 }

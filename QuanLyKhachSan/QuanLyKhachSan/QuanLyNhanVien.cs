@@ -69,5 +69,58 @@ namespace QuanLyKhachSan
             cbxGioiTinh.Text = "";
             txtLuong.Text = "";
         }
+
+        private void btThem_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(Helper.define.dataSource);
+            string id = txtMaNV.Text;
+            connection.Open();
+
+
+            string sql = "select * from NHANVIEN where MANV = '" + txtMaNV.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(sql, connection);
+
+            SqlDataReader dta = cmd.ExecuteReader();
+            if (dta.Read() == true)
+            {
+
+                MessageBox.Show(" Trùng mã! Mời Nhập lại");
+            }
+            else
+            {
+                dta.Close();
+                command = connection.CreateCommand();
+                command.CommandText = "Insert into NHANVIEN values('" + txtMaNV.Text + "', N'" + txtTenNV.Text + "','" + dateNgaySinh.Text + "', '" + txtSDT.Text + "', N'" + txtDiaChi.Text + "', '" + cbxGioiTinh.Text + "', '" + txtLuong.Text + "'  )";
+                command.ExecuteNonQuery();
+                loadData();
+            }
+        }
+
+
+        private void BtSua_Click_1(object sender, EventArgs e)
+        {
+            txtMaNV.ReadOnly = true;
+            command = connection.CreateCommand();
+            command.CommandText = "update NHANVIEN set MaNV = '" + txtMaNV.Text + "', N'" + txtTenNV.Text + "','" + dateNgaySinh.Text + "', '" + txtSDT.Text + "', N'" + txtDiaChi.Text + "', '" + cbxGioiTinh.Text + "', '" + txtLuong.Text + "'  )";
+            command.ExecuteNonQuery();
+            loadData();
+        }
+
+        private void btXoa_Click_1(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "update HOADON set MaNV = null where MaNV = '" + txtMaNV.Text + "'";
+            command.ExecuteNonQuery();
+
+            command = connection.CreateCommand();
+            command.CommandText = "update PHIEUDATPHONG set MaNV = null where MaNV = '" + txtMaNV.Text + "'";
+            command.ExecuteNonQuery();
+
+            command = connection.CreateCommand();
+            command.CommandText = "delete from NHANVIEN where MaNV ='" + txtMaNV.Text + "'";
+            command.ExecuteNonQuery();
+            loadData();
+        }
     }
 }
