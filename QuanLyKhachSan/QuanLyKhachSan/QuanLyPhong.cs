@@ -114,11 +114,11 @@ namespace QuanLyKhachSan
         {
 
             command = connection.CreateCommand();
-            command.CommandText = "update PHONG set SOPHONG = null where SOPHONG = '" + txtSoPhong.Text + "'";
+            command.CommandText = "update CHITIETPHIEUDAT set SOPHONG = null where SOPHONG = '" + txtSoPhong.Text + "'";
             command.ExecuteNonQuery();
 
             command = connection.CreateCommand();
-            command.CommandText = "delete from CHITIETPHIEUDAT where SOPHONG ='" + txtSoPhong.Text + "'";
+            command.CommandText = "delete from PHONG where SOPHONG ='" + txtSoPhong.Text + "'";
             command.ExecuteNonQuery();
             loadData();
         }
