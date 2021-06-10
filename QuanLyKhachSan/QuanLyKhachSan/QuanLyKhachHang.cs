@@ -38,7 +38,7 @@ namespace QuanLyKhachSan
 
         private void QuanLyKhachHang_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(Helper.define.dataSource);
+            connection = new SqlConnection(Helpers.define.dataSource);
             connection.Open();
             loadData();
         }
@@ -73,7 +73,7 @@ namespace QuanLyKhachSan
 
         private void btThem_Click_1(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(Helper.define.dataSource);
+            SqlConnection connection = new SqlConnection(Helpers.define.dataSource);
             string id = txtMaKH.Text;
             connection.Open();
 

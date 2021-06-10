@@ -52,7 +52,19 @@
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helper\helper.cs" />
+    <Compile Include="Helper\helper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helper\helper.designer.cs">
+      <DependentUpon>helper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\HelpPictureBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Helper\HelpPictureBox.designer.cs">
+      <DependentUpon>HelpPictureBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Utilities.cs" />
     <Compile Include="ManHinhChinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +99,12 @@
     </Compile>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helper\helper.resx">
+      <DependentUpon>helper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helper\HelpPictureBox.resx">
+      <DependentUpon>HelpPictureBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManHinhChinh.resx">
       <DependentUpon>ManHinhChinh.cs</DependentUpon>

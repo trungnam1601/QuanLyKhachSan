@@ -40,7 +40,23 @@ namespace QuanLyKhachSan
         public ManHinhChinh()
         {
             InitializeComponent();
+            Closed += OnClose;
+            KeyPreview = true;
+            KeyDown += new KeyEventHandler(Form_KeyDown);
+        }
 
+        private void Form_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "F1")
+            {
+                var helperDialog = new Helpers.Helper();
+                helperDialog.ShowDialog();
+            }
+        }
+
+        private void OnClose(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -89,7 +105,7 @@ namespace QuanLyKhachSan
 
         private void ManHinhChinh_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(Helper.define.dataSource);
+            connection = new SqlConnection(Helpers.define.dataSource);
             connection.Open();
             loadData();
         }
@@ -126,6 +142,11 @@ namespace QuanLyKhachSan
             dateNgayDen.Text = "";
             txtMaKH.Text = "";
             txtMaNV.Text = "";
+        }
+
+        private void helpBTN_Click(object sender, EventArgs e)
+        {
+            new Helpers.Helper().ShowDialog();
         }
     }
 }

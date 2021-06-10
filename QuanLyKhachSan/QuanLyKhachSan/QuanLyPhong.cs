@@ -44,7 +44,7 @@ namespace QuanLyKhachSan
 
         private void QuanLyPhong_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(Helper.define.dataSource);
+            connection = new SqlConnection(Helpers.define.dataSource);
             connection.Open();
             loadData();
         }
@@ -91,7 +91,7 @@ namespace QuanLyKhachSan
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(Helper.define.dataSource);
+            SqlConnection connection = new SqlConnection(Helpers.define.dataSource);
             connection.Open();
 
             if(cbxMaLP.Text != null )

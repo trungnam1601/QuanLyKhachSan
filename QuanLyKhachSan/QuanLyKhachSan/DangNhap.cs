@@ -20,7 +20,7 @@ namespace QuanLyKhachSan
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(Helper.define.dataSource);
+            SqlConnection connection = new SqlConnection(Helpers.define.dataSource);
 
             try
             {

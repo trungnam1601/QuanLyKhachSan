@@ -40,6 +40,7 @@ namespace QuanLyKhachSan
             this.label1 = new System.Windows.Forms.Label();
             this.btnTrangChu = new System.Windows.Forms.Button();
             this.panelchinh = new System.Windows.Forms.Panel();
+            this.btReset = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btTimKiem = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -62,7 +63,7 @@ namespace QuanLyKhachSan
             this.txtMaPhieuDat = new System.Windows.Forms.TextBox();
             this.dtgPhieudatphong = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.btReset = new System.Windows.Forms.Button();
+            this.helpBTN = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelchinh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPhieudatphong)).BeginInit();
@@ -204,6 +205,16 @@ namespace QuanLyKhachSan
             this.panelchinh.Name = "panelchinh";
             this.panelchinh.Size = new System.Drawing.Size(752, 450);
             this.panelchinh.TabIndex = 1;
+            // 
+            // btReset
+            // 
+            this.btReset.Location = new System.Drawing.Point(553, 189);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(75, 23);
+            this.btReset.TabIndex = 66;
+            this.btReset.Text = "Reset";
+            this.btReset.UseVisualStyleBackColor = true;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
             // 
             // txtTimKiem
             // 
@@ -395,21 +406,25 @@ namespace QuanLyKhachSan
             this.label6.TabIndex = 2;
             this.label6.Text = "Phần Mềm Quản Lý Nhà Hàng";
             // 
-            // btReset
+            // helpBTN
             // 
-            this.btReset.Location = new System.Drawing.Point(553, 189);
-            this.btReset.Name = "btReset";
-            this.btReset.Size = new System.Drawing.Size(75, 23);
-            this.btReset.TabIndex = 66;
-            this.btReset.Text = "Reset";
-            this.btReset.UseVisualStyleBackColor = true;
-            this.btReset.Click += new System.EventHandler(this.btReset_Click);
+            this.helpBTN.BackColor = System.Drawing.Color.Blue;
+            this.helpBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.helpBTN.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.helpBTN.Location = new System.Drawing.Point(912, 7);
+            this.helpBTN.Name = "helpBTN";
+            this.helpBTN.Size = new System.Drawing.Size(22, 23);
+            this.helpBTN.TabIndex = 3;
+            this.helpBTN.Text = "?";
+            this.helpBTN.UseVisualStyleBackColor = false;
+            this.helpBTN.Click += new System.EventHandler(this.helpBTN_Click);
             // 
             // ManHinhChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 516);
+            this.Controls.Add(this.helpBTN);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panelchinh);
             this.Controls.Add(this.panel1);
@@ -462,5 +477,6 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.TextBox txtSophong;
         private System.Windows.Forms.Button btReset;
+        private System.Windows.Forms.Button helpBTN;
     }
 }

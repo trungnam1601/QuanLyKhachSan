@@ -40,7 +40,7 @@ namespace QuanLyKhachSan
 
         private void QuanLyNhanVien_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(Helper.define.dataSource);
+            connection = new SqlConnection(Helpers.define.dataSource);
             connection.Open();
             loadData();
         }
@@ -72,7 +72,7 @@ namespace QuanLyKhachSan
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(Helper.define.dataSource);
+            SqlConnection connection = new SqlConnection(Helpers.define.dataSource);
             string id = txtMaNV.Text;
             connection.Open();
 
