@@ -60,3 +60,20 @@ E:\ThucTapNhom\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhac
 E:\ThucTapNhom\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
 E:\ThucTapNhom\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\Helpers.HelpPictureBox.resources
 E:\ThucTapNhom\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\Helpers.Helper.resources
+D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csprojAssemblyReference.cache
+D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.FormDangNhap.resources
+D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\Helpers.Helper.resources
+D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\Helpers.HelpPictureBox.resources
+D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.ManHinhChinh.resources
+D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyDichVu.resources
+D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyKhachHang.resources
+D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyNhanVien.resources
+D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyPhong.resources
+D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb

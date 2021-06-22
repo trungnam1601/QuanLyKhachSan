@@ -102,7 +102,7 @@ namespace QuanLyKhachSan
         {
             txtMaNV.ReadOnly = true;
             command = connection.CreateCommand();
-            command.CommandText = "update NHANVIEN set MaNV = '" + txtMaNV.Text + "', N'" + txtTenNV.Text + "','" + dateNgaySinh.Text + "', '" + txtSDT.Text + "', N'" + txtDiaChi.Text + "', '" + cbxGioiTinh.Text + "', '" + txtLuong.Text + "'  )";
+            command.CommandText = "update NHANVIEN set MaNV = '" + txtMaNV.Text + "', TenNV= N'" + txtTenNV.Text + "', NS ='" + dateNgaySinh.Text + "', SDT= '" + txtSDT.Text + "', DIACHI= N'" + txtDiaChi.Text + "', GIOITINH= '" + cbxGioiTinh.Text + "', LUONG= '" + txtLuong.Text + "' where MaNV = '" + txtMaNV.Text + "' ";
             command.ExecuteNonQuery();
             loadData();
         }

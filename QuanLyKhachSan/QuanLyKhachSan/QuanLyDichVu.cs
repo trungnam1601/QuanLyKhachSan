@@ -30,10 +30,10 @@ namespace QuanLyKhachSan
             table.Clear();
             adapter.Fill(table);
             dtgQuanLyDichVu.DataSource = table;
-            
+
 
         }
-        
+
 
         public QuanLyDichVu()
         {
@@ -93,9 +93,9 @@ namespace QuanLyKhachSan
 
         private void BtSua_Click_1(object sender, EventArgs e)
         {
-            txtMaDV.ReadOnly = true;
+           // txtMaDV.ReadOnly = true;
             command = connection.CreateCommand();
-            command.CommandText = "update DICHVU set MaDV = N'" + txtMaDV.Text + "', N'" + txtTenDV.Text + "','" + txtDonGia.Text + "')";
+            command.CommandText = "update DICHVU set MaDV = '" + txtMaDV.Text + "', TENDV= N'" + txtTenDV.Text + "', DONGIA= '" + txtDonGia.Text + "' where MaDV = '" + txtMaDV.Text + "' ";
             command.ExecuteNonQuery();
             loadData();
         }

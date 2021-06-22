@@ -47,7 +47,7 @@ namespace QuanLyKhachSan
         {
             int i;
             i = dtgQuanLyKhachHang.CurrentRow.Index;
-            txtMaKH.Text= dtgQuanLyKhachHang.Rows[i].Cells[0].Value.ToString();
+            txtMaKH.Text = dtgQuanLyKhachHang.Rows[i].Cells[0].Value.ToString();
             txtTenKH.Text = dtgQuanLyKhachHang.Rows[i].Cells[1].Value.ToString();
             cbxGioiTinh.Text = dtgQuanLyKhachHang.Rows[i].Cells[2].Value.ToString();
             dateNgaySinh.Text = dtgQuanLyKhachHang.Rows[i].Cells[3].Value.ToString();
@@ -69,7 +69,7 @@ namespace QuanLyKhachSan
             txtQuocTich.Text = "";
         }
 
-       
+
 
         private void btThem_Click_1(object sender, EventArgs e)
         {
@@ -100,9 +100,9 @@ namespace QuanLyKhachSan
 
         private void BtSua_Click(object sender, EventArgs e)
         {
-            txtMaKH.ReadOnly = true;
+            // txtMaKH.ReadOnly = true;
             command = connection.CreateCommand();
-            command.CommandText = "update KHACHHANG set MaKH = '" + txtMaKH.Text + "', N'" + txtTenKH.Text + "','" + cbxGioiTinh.Text + "', '" + dateNgaySinh.Text + "', '" + txtSDT.Text + "','" + txtSCMND.Text + "', N'" + txtDiaChi.Text + "', '" + txtQuocTich.Text + "'  )";
+            command.CommandText = "update KHACHHANG set MaKH = '" + txtMaKH.Text + "', TENKH= N'" + txtTenKH.Text + "', GIOITINH='" + cbxGioiTinh.Text + "', NS= '" + dateNgaySinh.Text + "', SDT= '" + txtSDT.Text + "', SOCMND='" + txtSCMND.Text + "', DIACHI= N'" + txtDiaChi.Text + "', QUOCTICH= '" + txtQuocTich.Text + "'  WHERE MaKH = '" + txtMaKH.Text + "'";
             command.ExecuteNonQuery();
             loadData();
         }

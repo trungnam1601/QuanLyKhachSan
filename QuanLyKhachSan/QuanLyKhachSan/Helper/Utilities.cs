@@ -44,7 +44,8 @@ namespace Helpers
     }
 	class define    
     {
-        public const string dataSource = @"Data Source=DESKTOP-3PP3KKO;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
+        //PHULONG: DESKTOP-9JCB5HS
+        public const string dataSource = @"Data Source=DESKTOP-9JCB5HS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
 
         
         public static int Clamp(ref int value, int min, int max)

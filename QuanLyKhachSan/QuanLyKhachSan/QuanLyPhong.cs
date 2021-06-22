@@ -105,7 +105,7 @@ namespace QuanLyKhachSan
         private void BtSua_Click(object sender, EventArgs e)
         {
                  command = connection.CreateCommand();
-                 command.CommandText = "update PHONG set MALOAIPHONG = '" + cbxMaLP.Text + "','" + txtSoPhong.Text + "', '" + cbxTinhTrang.Text + "'  )";
+                 command.CommandText = "update PHONG set MALOAIPHONG = '" + cbxMaLP.Text + "', SOPHONG= '" + txtSoPhong.Text + "', TINHTRANG= N'" + cbxTinhTrang.Text + "' where SOPHONG ='"+ txtSoPhong.Text + "' ";
                  command.ExecuteNonQuery();
                  loadData();
         }
