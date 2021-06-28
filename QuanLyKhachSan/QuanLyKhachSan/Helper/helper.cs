@@ -132,5 +132,23 @@ namespace Helpers
             btnClick((Button)sender);
             helpBox.updateInformation(HELPERSTATE.SEARCHHELPER, CATSTATE.Staff);
         }
+
+        private void propertyAdd_Click(object sender, EventArgs e)
+        {
+            btnClick((Button)sender);
+            helpBox.updateInformation(HELPERSTATE.ADDHELPER, CATSTATE.Property);
+        }
+
+        private void propertyEdit_Click(object sender, EventArgs e)
+        {
+            btnClick((Button)sender);
+            helpBox.updateInformation(HELPERSTATE.EDITHELPER, CATSTATE.Property);
+        }
+
+        private void propertyDel_Click(object sender, EventArgs e)
+        {
+            btnClick((Button)sender);
+            helpBox.updateInformation(HELPERSTATE.DELETEHELPER, CATSTATE.Property);
+        }
     }
 }

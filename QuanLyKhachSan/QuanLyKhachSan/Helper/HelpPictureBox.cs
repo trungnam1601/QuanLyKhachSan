@@ -12,9 +12,16 @@ namespace Helpers
 {
     public partial class HelpPictureBox : UserControl
     {
+        SolidBrush brush = new SolidBrush(Color.Purple);
         Graphics g;
         int currentIndex = 0;
-        int[,] maxIndex = new int[4, 4] { { 1, 2, 1, 1 }, { 1, 2, 1, 1 } , { 1, 2, 1, 1 }, { 1, 2, 1, 1 } };
+        int[,] maxIndex = 
+            new int[5, 4] { 
+            { 1, 2, 1, 1 }, 
+            { 1, 2, 1, 1 } , 
+            { 1, 2, 1, 1 }, 
+            { 1, 2, 1, 1 },
+            { 1, 2, 1, 1 }};
         HELPERSTATE currentState = HELPERSTATE.ADDHELPER;
         CATSTATE currentObjectToRef = CATSTATE.Room;
         string[,] helpStringRoom = new string[4, 3] 
@@ -65,6 +72,18 @@ namespace Helpers
             { "B1: Điền thông tin nhân viên cần tìm kiếm vào bảng",
               "B2: Nhấp chuột trái vào nút tìm kiếm để in ra thông tin của các nhân viên tương đồng với thông tin đã nhập","" }
         };
+        string[,] helpStringProperty = new string[4, 3]
+        {
+            { "B1: Điền thông tin vật tư cần thêm vào các bảng",
+              "B2: Nhấp chuột trái vào nút Thêm để thêm vật tư vào cơ sở dữ liệu","" },
+            { "B1: Nhấp chuột trái 2 lần vào dòng hoặc nhập mã vật tư cần sửa trong bảng hoặc gõ mã vật tư vào trong ô",
+              "B2: Thay đổi thông tin ở trên các bảng",
+              "B3: Nhấp chuột trái vào nút Sửa để cập nhập lại thông tin vật tư" },
+            { "B1: Nhấp chuột trái 2 lần vào dòng hoặc nhập mã vật tư cần xoá",
+              "B2: Nhấp chuột trái vào nút Xoá để xoá vật tư khỏi cơ sở dữ liệu","" },
+            { "B1: Điền thông tin vật tư cần tìm kiếm vào bảng",
+              "B2: Nhấp chuột trái vào nút tìm kiếm để in ra thông tin của các vật tư tương đồng với thông tin đã nhập","" }
+        };
         public HelpPictureBox()
         {
             InitializeComponent();
@@ -78,8 +97,6 @@ namespace Helpers
             float percentage = 1f / (maxIndex[(int)currentObjectToRef, (int)currentState] + 1);
             int width = Convert.ToInt32(progressBar.Width * percentage);
             Rectangle rectangle = new Rectangle(0, 0, width, progressBar.Height);
-            SolidBrush brush = new SolidBrush(Color.Red);
-
             e.Graphics.FillRectangle(brush, rectangle);
         }
 
@@ -106,6 +123,11 @@ namespace Helpers
                     helpLabel.Text = helpStringStaff[(int)currentState, currentIndex];
                     checkLabeOverflow();
                     helperPic.Image = Image.FromFile(Application.StartupPath + "\\Image\\Staff" + filename);
+                    break;
+                case CATSTATE.Property:
+                    helpLabel.Text = helpStringProperty[(int)currentState, currentIndex];
+                    checkLabeOverflow();
+                    helperPic.Image = Image.FromFile(Application.StartupPath + "\\Image\\Property" + filename);
                     break;
             }   
 
@@ -144,8 +166,6 @@ namespace Helpers
             float percentage = (float)(index + 1) / ( maxIndex[(int)currentObjectToRef, (int)currentState] + 1);
             int width = Convert.ToInt32(progressBar.Width * percentage);
             Rectangle rectangle = new Rectangle(0, 0, width, progressBar.Height);
-
-            SolidBrush brush = new SolidBrush(Color.Red);
             
             g.FillRectangle(brush, rectangle);
         }

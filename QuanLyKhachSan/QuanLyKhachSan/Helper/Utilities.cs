@@ -14,6 +14,7 @@ namespace Helpers
         Customer = 1,
         Service = 2,
         Staff = 3,
+        Property = 4,
     }
     public enum HELPERSTATE : int
     {
@@ -45,7 +46,7 @@ namespace Helpers
 	class define    
     {
         //PHULONG: DESKTOP-9JCB5HS
-        public const string dataSource = @"Data Source=ADMIN;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
+        public const string dataSource = @"Data Source=DESKTOP-3PP3KKO;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
 
         
         public static int Clamp(ref int value, int min, int max)

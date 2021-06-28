@@ -81,3 +81,5 @@ E:\Thực Tập Nhóm\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\Hel
 E:\Thực Tập Nhóm\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\Helpers.HelpPictureBox.resources
 E:\Thực Tập Nhóm\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.VatDung.resources
 E:\Thực Tập Nhóm\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.ThanhToan.resources
+E:\ThucTapNhom\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.ThanhToan.resources
+E:\ThucTapNhom\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.VatDung.resources
