@@ -20,6 +20,8 @@ namespace QuanLyKhachSan
 
         SqlConnection connection;
         SqlCommand command;
+        SqlDataReader sqlReader;
+    
 
         SqlDataAdapter adapter = new SqlDataAdapter();
 
@@ -28,15 +30,39 @@ namespace QuanLyKhachSan
         void loadData()
         {
             command = connection.CreateCommand();
-            command.CommandText = "select P.MAPHIEUDATPHONG,C.SOPHONG,P.NGAYLAPPHIEU,P.NGAYDEN,C.NGAYTRAPHONG,P.MAKH,P.MANV from PHIEUDATPHONG AS P, CHITIETPHIEUDAT AS C ";
+            command.CommandText = "select * from PHIEUDATPHONG  ";
             adapter.SelectCommand = command;
             table.Clear();
             adapter.Fill(table);
             dtgPhieudatphong.DataSource = table;
 
+            UpdateMANV();
+            UpdateMAKH();
         }
 
+        private void UpdateMANV()
+        {
+            cbxMaNV.Items.Clear();
+            command.CommandText = "SELECT * FROM NHANVIEN";
+            sqlReader = command.ExecuteReader();
+            while (sqlReader.Read())
+            {
+                cbxMaNV.Items.Add(sqlReader["MANV"].ToString());
+            }
+            sqlReader.Close();
+        }
 
+        private void UpdateMAKH()
+        {
+            cbxMaKH.Items.Clear();
+            command.CommandText = "SELECT * FROM KHACHHANG";
+            sqlReader = command.ExecuteReader();
+            while (sqlReader.Read())
+            {
+                cbxMaKH.Items.Add(sqlReader["MAKH"].ToString());
+            }
+            sqlReader.Close();
+        }
         public ManHinhChinh()
         {
             InitializeComponent();
@@ -115,12 +141,10 @@ namespace QuanLyKhachSan
             int i;
             i = dtgPhieudatphong.CurrentRow.Index;
             txtMaPhieuDat.Text = dtgPhieudatphong.Rows[i].Cells[0].Value.ToString();
-            txtSophong.Text= dtgPhieudatphong.Rows[i].Cells[1].Value.ToString();
-            dateNgayLap.Text= dtgPhieudatphong.Rows[i].Cells[2].Value.ToString();
-            dateNgayDen.Text= dtgPhieudatphong.Rows[i].Cells[3].Value.ToString();
-            datengaytra.Text = dtgPhieudatphong.Rows[i].Cells[4].Value.ToString();
-            txtMaKH.Text = dtgPhieudatphong.Rows[i].Cells[5].Value.ToString();
-            txtMaNV.Text = dtgPhieudatphong.Rows[i].Cells[6].Value.ToString();
+            datengaylap.Text= dtgPhieudatphong.Rows[i].Cells[1].Value.ToString();
+            datengayden.Text = dtgPhieudatphong.Rows[i].Cells[2].Value.ToString();
+            cbxMaNV.Text = dtgPhieudatphong.Rows[i].Cells[3].Value.ToString();
+            cbxMaKH.Text = dtgPhieudatphong.Rows[i].Cells[4].Value.ToString();
         }
 
         private void btnTrangChu_Click(object sender, EventArgs e)
@@ -136,17 +160,110 @@ namespace QuanLyKhachSan
         private void btReset_Click(object sender, EventArgs e)
         {
             txtMaPhieuDat.Text = "";
-            dateNgayLap.Text = "";
-            txtSophong.Text = "";
-            datengaytra.Text = "";
-            dateNgayDen.Text = "";
-            txtMaKH.Text = "";
-            txtMaNV.Text = "";
+            datengaylap.Text = "";
+            datengayden.Text = "";
+            cbxMaNV.Text = "";
+            cbxMaKH.Text = "";
+            txtTimKiem.Text = "";
+            loadData();
         }
 
         private void helpBTN_Click(object sender, EventArgs e)
         {
             new Helpers.Helper().ShowDialog();
+        }
+
+        private void QuanLyVatTu_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new VatDung());
+        }
+
+        private void btThem_Click(object sender, EventArgs e)
+        {
+             SqlConnection connection = new SqlConnection(Helpers.define.dataSource);
+            string id = txtMaPhieuDat.Text;
+            connection.Open();
+
+
+            string sql = "select * from PHIEUDATPHONG where MAPHIEUDATPHONG = '" + txtMaPhieuDat.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(sql, connection);
+
+            SqlDataReader dta = cmd.ExecuteReader();
+            if (dta.Read() == true)
+            {
+
+                MessageBox.Show(" Trùng mã! Mời Nhập lại");
+            }
+            else
+            {
+                dta.Close();
+                command = connection.CreateCommand();
+                command.CommandText = "Insert into PHIEUDATPHONG values('" + txtMaPhieuDat.Text + "', '" + datengaylap.Text + "','" + datengayden.Text + "', '" + cbxMaNV.Text + "', '" + cbxMaKH.Text + "' )";
+                command.ExecuteNonQuery();
+                loadData();
+            }
+
+        }
+
+        private void BtSua_Click(object sender, EventArgs e)
+        {
+           // txtMaPhieuDat.ReadOnly = true;
+            command = connection.CreateCommand();
+            command.CommandText = "update PHIEUDATPHONG set MAPHIEUDATPHONG = '" + txtMaPhieuDat.Text + "', NGAYLAPPHIEU= '" + datengaylap.Text + "', NGAYDEN ='" + datengayden.Text + "', MANV = '" + cbxMaNV.Text + "', MAKH = '" + cbxMaKH.Text + "' where MAPHIEUDATPHONG = '" + txtMaPhieuDat.Text + "' ";
+            command.ExecuteNonQuery();
+            loadData();
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "delete from PHIEUDATPHONG where MAPHIEUDATPHONG ='" + txtMaPhieuDat.Text + "'";
+            command.ExecuteNonQuery();
+            loadData();
+
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new ThanhToan());
+        }
+
+        private void btTimKiem_Click(object sender, EventArgs e)
+        {
+
+            SqlConnection connection = new SqlConnection(Helpers.define.dataSource);
+            connection.Open();
+            if (txtTimKiem.Text.Trim() == "")
+            {
+                MessageBox.Show("Chưa nhập thông tin tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+                txtTimKiem.Focus();
+            }
+            else
+            {
+
+                string sql = "select * from PHIEUDATPHONG where MAPHIEUDATPHONG LIKE '%" + txtTimKiem.Text + "%' or NGAYLAPPHIEU Like N'%" + txtTimKiem.Text + "%' or NGAYDEN LIKE '%" + txtTimKiem.Text + "%' or MANV LIKE '%"+txtTimKiem.Text+ "%' or MAKH LIKE '%" + txtTimKiem.Text + "%'";
+
+                SqlCommand cmd = new SqlCommand(sql, connection);
+                SqlDataReader dta = cmd.ExecuteReader();
+
+                if (dta.Read() == true)
+                {
+                    dta.Close();
+                    command = connection.CreateCommand();
+                    command.CommandText = "select * from PHIEUDATPHONG where MAPHIEUDATPHONG LIKE '%" + txtTimKiem.Text + "%' or NGAYLAPPHIEU Like N'%" + txtTimKiem.Text + "%' or NGAYDEN LIKE '%" + txtTimKiem.Text + "%' or MANV LIKE '%" + txtTimKiem.Text + "%' or MAKH LIKE '%" + txtTimKiem.Text + "%'";
+                    adapter.SelectCommand = command;
+                    table.Clear();
+                    adapter.Fill(table);
+                    dtgPhieudatphong.DataSource = table;
+                }
+                else
+                {
+                    MessageBox.Show("Không có thông tin cần tìm!");
+                }
+            }
         }
     }
 }

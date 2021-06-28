@@ -68,6 +68,9 @@ namespace QuanLyKhachSan
             txtDiaChi.Text = "";
             cbxGioiTinh.Text = "";
             txtLuong.Text = "";
+            txtTimKiem.Text = "";
+
+            loadData();
         }
 
         private void btThem_Click(object sender, EventArgs e)
@@ -122,5 +125,42 @@ namespace QuanLyKhachSan
             command.ExecuteNonQuery();
             loadData();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(Helpers.define.dataSource);
+            connection.Open();
+            if (txtTimKiem.Text.Trim() == "")
+            {
+                MessageBox.Show("Chưa nhập thông tin tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+                txtTimKiem.Focus();
+            }
+            else
+            {
+
+                string sql = "select * from NHANVIEN where MANV LIKE '%" + txtTimKiem.Text + "%' or TENNV Like N'%" + txtTimKiem.Text + "%' or NS LIKE '%" + txtTimKiem.Text + "%' or SDT LIKE '%" + txtTimKiem.Text + "%' or DIACHI LIKE '%" + txtTimKiem.Text + "%' or GIOITINH LIKE '%" + txtTimKiem.Text + "%' or LUONG LIKE '%" + txtTimKiem.Text + "%'";
+
+                SqlCommand cmd = new SqlCommand(sql, connection);
+                SqlDataReader dta = cmd.ExecuteReader();
+
+                if (dta.Read() == true)
+                {
+                    dta.Close();
+                    command = connection.CreateCommand();
+                    command.CommandText = "select * from NHANVIEN where MANV LIKE '%" + txtTimKiem.Text + "%' or TENNV Like N'%" + txtTimKiem.Text + "%' or NS LIKE '%" + txtTimKiem.Text + "%' or SDT LIKE '%" + txtTimKiem.Text + "%' or DIACHI LIKE '%" + txtTimKiem.Text + "%' or GIOITINH LIKE '%" + txtTimKiem.Text + "%' or LUONG LIKE '%" + txtTimKiem.Text + "%'";
+                    adapter.SelectCommand = command;
+                    table.Clear();
+                    adapter.Fill(table);
+                    dtgQuanLyNhanVien.DataSource = table;
+                }
+                else
+                {
+                    MessageBox.Show("Không có thông tin cần tìm!");
+                }
+            }
+        }
+
+       
     }
 }

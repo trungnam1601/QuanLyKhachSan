@@ -77,3 +77,7 @@ D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLy
 D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
 D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 D:\QUAN TRỌNG\Thực Tập nhóm\Quản lý khách sạn\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+E:\Thực Tập Nhóm\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\Helpers.Helper.resources
+E:\Thực Tập Nhóm\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\Helpers.HelpPictureBox.resources
+E:\Thực Tập Nhóm\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.VatDung.resources
+E:\Thực Tập Nhóm\QuanLyKhachSan\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.ThanhToan.resources

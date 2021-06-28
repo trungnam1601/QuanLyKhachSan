@@ -61,6 +61,7 @@ namespace QuanLyKhachSan
             txtMaDV.Text = "";
             txtTenDV.Text = "";
             txtDonGia.Text = "";
+            loadData();
         }
 
 

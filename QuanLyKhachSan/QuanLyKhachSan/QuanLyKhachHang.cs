@@ -67,6 +67,7 @@ namespace QuanLyKhachSan
             txtSCMND.Text = "";
             txtDiaChi.Text = "";
             txtQuocTich.Text = "";
+            loadData();
         }
 
 
@@ -100,9 +101,9 @@ namespace QuanLyKhachSan
 
         private void BtSua_Click(object sender, EventArgs e)
         {
-            // txtMaKH.ReadOnly = true;
+            txtMaKH.ReadOnly = true;
             command = connection.CreateCommand();
-            command.CommandText = "update KHACHHANG set MaKH = '" + txtMaKH.Text + "', TENKH= N'" + txtTenKH.Text + "', GIOITINH='" + cbxGioiTinh.Text + "', NS= '" + dateNgaySinh.Text + "', SDT= '" + txtSDT.Text + "', SOCMND='" + txtSCMND.Text + "', DIACHI= N'" + txtDiaChi.Text + "', QUOCTICH= '" + txtQuocTich.Text + "'  WHERE MaKH = '" + txtMaKH.Text + "'";
+            command.CommandText = "update KHACHHANG set MAKH = '" + txtMaKH.Text + "', TENKH= N'" + txtTenKH.Text + "', GIOITINH ='" + cbxGioiTinh.Text + "', NS = '" + dateNgaySinh.Text + "', SDT = '" + txtSDT.Text + "', SOCMND='" + txtSCMND.Text + "', DIACHI= N'" + txtDiaChi.Text + "', QUOCTICH= '" + txtQuocTich.Text + "'  WHERE MAKH = '" + txtMaKH.Text + "'";
             command.ExecuteNonQuery();
             loadData();
         }

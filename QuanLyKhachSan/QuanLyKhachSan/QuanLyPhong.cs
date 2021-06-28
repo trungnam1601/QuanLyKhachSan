@@ -24,7 +24,7 @@ namespace QuanLyKhachSan
         void loadData()
         {
             command = connection.CreateCommand();
-            command.CommandText = "select P.MALOAIPHONG, LP.TENLOAIPHONG, P.SOPHONG, LP.SONGUOITOIDA,LP.GIA,P.TINHTRANG  from PHONG AS P,LOAIPHONG AS LP where P.MALOAIPHONG = LP.MALOAIPHONG";
+            command.CommandText = "select P.MALOAIPHONG, LP.TENLOAIPHONG, P.SOPHONG, LP.SONGUOITOIDA,LP.GIA,P.TINHTRANG  from PHONG AS P,LOAIPHONG AS LP where P.MALOAIPHONG = LP.MALOAIPHONG ";
             adapter.SelectCommand = command;
             table.Clear();
             adapter.Fill(table);
@@ -87,6 +87,7 @@ namespace QuanLyKhachSan
             txtTenLP.Text = "";
             txtGia.Text = "";
             txtSoNguoi.Text = "";
+            loadData();
         }
 
         private void btThem_Click(object sender, EventArgs e)

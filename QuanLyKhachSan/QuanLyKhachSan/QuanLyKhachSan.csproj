@@ -97,6 +97,18 @@
     <Compile Include="QuanLyPhong.Designer.cs">
       <DependentUpon>QuanLyPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThanhToan.Designer.cs">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VatDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VatDung.Designer.cs">
+      <DependentUpon>VatDung.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +142,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyPhong.resx">
       <DependentUpon>QuanLyPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhToan.resx">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VatDung.resx">
+      <DependentUpon>VatDung.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
